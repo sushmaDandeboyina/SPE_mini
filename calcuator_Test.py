@@ -1,13 +1,13 @@
 import unittest
 import math
-from calculator import squareRoot, powerFunction
+from calculator import squareRoot, powerFunction, factorial
 
 class Cal_testing(unittest.TestCase):
     def test_positive_squareRoot(self):
         self.assertEqual(squareRoot(9),3)
         self.assertEqual(squareRoot(25),5)
         self.assertAlmostEqual(squareRoot(3),1.732, places=3)
-        self.assertAlmostEqual(squareRoot(4.8),2.190, places=3)
+        self.assertAlmostEqual(squareRoot(4.8),math.sqrt(4.8), places=3)
         self.assertNotEqual(squareRoot(16),2)
     
     def test_zero_squareRoot(self):
@@ -43,7 +43,7 @@ class Cal_testing(unittest.TestCase):
         self.assertEqual(factorial(1), 1)
 
     def test_negative_factorial(self):
-        self.assertEqual(factorial(-5), "Factorial cannot be computed for negative numbers")
+        self.assertEqual(factorial(-5), "Negative numbers doesn't have factorial")
         self.assertNotEqual(factorial(-3), 6)
 
 if __name__ == "__main__": 
