@@ -6,6 +6,17 @@ def squareRoot(x):
         return "Square root cannot be computed for negative numbers"
     return math.sqrt(x)
 
+def factorial(x):
+    if x<0:
+        return "Negative numbers doesn't have factorial"
+    elif x == 0 or x == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, x + 1):
+            result *= i
+        return result
+
 def powerFunction(x,b):
     return x**b
 
@@ -20,6 +31,17 @@ def main():
             return
         x = float(sys.argv[2])
         print("Result:", squareRoot(x))
+
+    elif choice == 2:
+        if len(sys.argv) < 3:
+            print("Error: Please provide a number for factorial.")
+            return
+        x = float(sys.argv[2])
+        if x != int(x): 
+                print("Error: Invalid input! Factorial is only defined for integers.")
+                return
+        x = int(x)
+        print("Result:", factorial(x))
     
     elif choice == 4:
         if len(sys.argv)<4:

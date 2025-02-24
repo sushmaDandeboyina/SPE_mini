@@ -7,6 +7,7 @@ class Cal_testing(unittest.TestCase):
         self.assertEqual(squareRoot(9),3)
         self.assertEqual(squareRoot(25),5)
         self.assertAlmostEqual(squareRoot(3),1.732, places=3)
+        self.assertAlmostEqual(squareRoot(4.8),2.190, places=3)
         self.assertNotEqual(squareRoot(16),2)
     
     def test_zero_squareRoot(self):
@@ -32,6 +33,18 @@ class Cal_testing(unittest.TestCase):
         self.assertEqual(powerFunction(-2,3), -8)
         self.assertNotAlmostEqual(powerFunction(-3,-2), -0.111,places = 3) 
 
+    def test_positive_factorial(self):
+        self.assertEqual(factorial(5), 120)
+        self.assertEqual(factorial(7), 5040)
+        self.assertNotEqual(factorial(10), 362880)
+
+    def test_zero_factorial(self):
+        self.assertEqual(factorial(0), 1)
+        self.assertEqual(factorial(1), 1)
+
+    def test_negative_factorial(self):
+        self.assertEqual(factorial(-5), "Factorial cannot be computed for negative numbers")
+        self.assertNotEqual(factorial(-3), 6)
 
 if __name__ == "__main__": 
     unittest.main()
