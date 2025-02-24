@@ -16,12 +16,8 @@ pipeline{
             steps {
                 script {
                     def command = "python3 calculator.py ${CHOICE} ${NUMBER1}"
-                    if (CHOICE == '4') {
+                    if (CHOICE == '4' or CHOICE == '3') {
                         command += " ${NUMBER2}"
-                    }
-                    elif(CHOICE == '3')
-                    {
-                        command += "${NUMBER2}"
                     }
                     sh command
                 }
