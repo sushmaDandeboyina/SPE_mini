@@ -1,9 +1,9 @@
-pipelinr{
+pipeline{
     agent any
     stages{
         stage('Clone Git'){
             steps{
-                git branch: 'main', url:'https://github.com/sushmaDandeboyina/spe_miniproject.git'
+                git branch: 'main', url:'https://github.com/sushmaDandeboyina/SPE_mini.git'
             }
         }
         stage('Build Code') {
