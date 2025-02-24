@@ -6,7 +6,7 @@ def squareRoot(x):
         return "Square root cannot be computed for negative numbers"
     return math.sqrt(x)
 
-def exponent(x,b):
+def powerFunction(x,b):
     return x**b
 
 def main():
