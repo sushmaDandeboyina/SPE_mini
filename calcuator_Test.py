@@ -30,9 +30,9 @@ class Cal_testing(unittest.TestCase):
     def test_negative_powerFunction(self):
         self.assertEqual(powerFunction(4, -1), 0.25) 
         self.assertEqual(powerFunction(-2,3), -8)
-        self.assertNotEqual(powerFunction(-3,-2), -0.111,places = 3) 
-        
-         
+        self.assertNotAlmostEqual(powerFunction(-3,-2), -0.111,places = 3) 
+
+
 if __name__ == "__main__": 
     unittest.main()
 
