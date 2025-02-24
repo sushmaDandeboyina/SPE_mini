@@ -26,8 +26,8 @@ def main():
             print("Error: Please provide both base (x) and exponent (b).")
             return
         x = float(sys.argv[2])
-            b = float(sys.argv[3])
-            print("Result:", powerFunction(x, b))
+        b = float(sys.argv[3])
+        print("Result:", powerFunction(x, b))
         
     elif choice == 5:
         print("Exiting\n")
