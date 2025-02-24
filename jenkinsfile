@@ -1,0 +1,22 @@
+pipelinr{
+    agent any
+    stages{
+        stage('Clone Git'){
+            steps{
+                git branch: 'main', url:'https://github.com/sushmaDandeboyina/spe_miniproject.git'
+            }
+        }
+        stage('Build Code') {
+            steps{
+                sh "chmod u+x calculator.py"
+                sh "python3 calculator.py"
+            }
+        }
+        stage('Test Code') {
+            steps {
+                sh "chmod u+x calcuator_Test.py"
+                sh "python3 calcuator_Test.py"
+            }
+        }
+    }
+}
