@@ -1,4 +1,5 @@
 import math
+import sys
 
 def squareRoot(x):
     if x < 0:
@@ -21,7 +22,7 @@ def main():
 
         # choice = input("Enter choice (1-5): ")
 
-    if choice == '1':
+    if choice == 1:
         if len(sys.argv) < 3:
             print("Error: Please provide a number for square root.")
             return
@@ -30,7 +31,7 @@ def main():
         
     elif choice == 5:
         print("Exiting\n")
-        break
+        return
 
     else:
         print("Invalid choice! Please select a valid option.")
