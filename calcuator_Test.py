@@ -1,6 +1,6 @@
 import unittest
 import math
-from calculator import squareRoot, powerFunction, factorial
+from calculator import squareRoot, powerFunction, factorial, logarithm
 
 class Cal_testing(unittest.TestCase):
     def test_positive_squareRoot(self):
@@ -45,7 +45,18 @@ class Cal_testing(unittest.TestCase):
     def test_negative_factorial(self):
         self.assertEqual(factorial(-5), "Negative numbers doesn't have factorial")
         self.assertNotEqual(factorial(-3), 6)
-
+    
+    def test_edge_logarithm(self):
+        self.assertEqual(logarithm(-5, 2),"Undefined")
+        self.assertEqual(logarithm(5,-2),"Undefined")
+        self.assertEqual(logarithm(5,1),"Undefined")
+    
+    def test_logarithm(self):
+        self.assertEqual(logarithm(8, 2),3.0)
+        self.assertAlmostEqual(logarithm(100, 10), 2.0, places=5)
+        self.assertAlmostEqual(logarithm(0.5, 2), -1.0, places=5)
+        self.assertNotEqual(logarithm(9,3),3)
+        
 if __name__ == "__main__": 
     unittest.main()
 

@@ -19,6 +19,10 @@ pipeline{
                     if (CHOICE == '4') {
                         command += " ${NUMBER2}"
                     }
+                    elif(CHOICE == '3')
+                    {
+                        command += "${NUMBER2}"
+                    }
                     sh command
                 }
             }

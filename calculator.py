@@ -17,6 +17,11 @@ def factorial(x):
             result *= i
         return result
 
+def logarithm(x, base):
+    if x <= 0 or base <= 0 or base == 1:
+        return "Undefined"
+    return math.log(x, base)
+
 def powerFunction(x,b):
     return x**b
 
@@ -42,7 +47,15 @@ def main():
                 return
         x = int(x)
         print("Result:", factorial(x))
-    
+
+    elif choice == 3:  
+        if len(sys.argv) < 4:
+            print("Error: Please provide both base and exponent.")
+            return
+        x = float(sys.argv[2])
+        b = float(sys.argv[3])
+        print("Result:", logarithm(x, b))
+
     elif choice == 4:
         if len(sys.argv)<4:
             print("Error: Please provide both base (x) and exponent (b).")
