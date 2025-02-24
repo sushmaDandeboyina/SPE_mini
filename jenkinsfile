@@ -8,12 +8,24 @@ pipeline{
         }
         stage('Build Code') {
             steps{
+                sh "ls -la"
                 sh "chmod u+x calculator.py"
-                sh "python3 calculator.py"
+            }
+        }
+        stage('Execute Code') {
+            steps {
+                script {
+                    def command = "python3 calculator.py ${CHOICE} ${NUMBER1}"
+                    if (CHOICE == '4') {
+                        command += " ${NUMBER2}"
+                    }
+                    sh command
+                }
             }
         }
         stage('Test Code') {
             steps {
+                sh "ls -la"
                 sh "chmod u+x calcuator_Test.py"
                 sh "python3 calcuator_Test.py"
             }

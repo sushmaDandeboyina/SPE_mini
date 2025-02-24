@@ -6,23 +6,35 @@ def squareRoot(x):
     return math.sqrt(x)
 
 def main():
-    while True:
-        print("\nCalculator")
-        print("******************")
-        print("1. Square Root (√x)")
-        print("2. Factorial (x!)")
-        print("3. Natural Logarithm (ln(x))")
-        print("4. Power Function (x^b)")
-        print("5. Exit")
+    if len(sys.argv) < 2:
+        print("Insufficient arguements passed")
+        return
+    choice = int(sys.argv[1])
+    # while True:
+    #     print("\nCalculator")
+    #     print("******************")
+    #     print("1. Square Root (√x)")
+    #     print("2. Factorial (x!)")
+    #     print("3. Natural Logarithm (ln(x))")
+    #     print("4. Power Function (x^b)")
+    #     print("5. Exit")
 
-        choice = input("Enter choice (1-5): ")
+        # choice = input("Enter choice (1-5): ")
 
-        if choice == '1':
-            x = float(input("Enter a number: "))
-            print("Result:", squareRoot(x))
+    if choice == '1':
+        if len(sys.argv) < 3:
+            print("Error: Please provide a number for square root.")
+            return
+        x = float(sys.argv[2])
+        print("Result:", squareRoot(x))
+        
+    elif choice == 5:
+        print("Exiting\n")
+        break
 
-        else:
-            print("Invalid choice! Please select a valid option.")
+    else:
+        print("Invalid choice! Please select a valid option.")
+
 
 if __name__ == "__main__":
     main()
